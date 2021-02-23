@@ -1,0 +1,44 @@
+# App configs
+app:
+  # App name
+  name: ${CATEPILLAR_NAME:-caterpillar}
+  # Env mode (dev or prod)
+  mode: ${CATEPILLAR_MODE:-prod}
+  # HTTP port
+  port: ${CATEPILLAR_PORT:-80}
+  # Hostname
+  hostname: ${CATEPILLAR_HOSTNAME:-127.0.0.1}
+  # TLS configs
+  tls:
+    status: ${CATEPILLAR_TLS_STATUS:-off}
+    crt_path: ${CATEPILLAR_TLS_PEMPATH:-cert/server.crt}
+    key_path: ${CATEPILLAR_TLS_KEYPATH:-cert/server.key}
+
+  # Global timeout
+  timeout: ${CATEPILLAR_TIMEOUT:-50}
+
+  # Application Database
+  database:
+      # database driver
+      driver: ${CATEPILLAR_DB_DRIVER:-etcd}
+
+      etcd:
+        # etcd database name or prefix
+        databaseName: ${CATEPILLAR_DB_ETCD_DB:-caterpillar}
+        # etcd username
+        username: ${CATEPILLAR_DB_ETCD_USERNAME:- }
+        # etcd password
+        password: ${CATEPILLAR_DB_ETCD_PASSWORD:- }
+        # etcd endpoints
+        endpoints: ${CATEPILLAR_DB_ETCD_ENDPOINTS:-http://127.0.0.1:2379}
+        # Timeout in seconds
+        timeout: 30
+
+  # Log configs
+  log:
+    # Log level, it can be debug, info, warn, error, panic, fatal
+    level: ${CATEPILLAR_LOG_LEVEL:-info}
+    # Output can be stdout or abs path to log file /var/logs/caterpillar.log
+    output: ${CATEPILLAR_LOG_OUTPUT:-/var/logs/caterpillar.log}
+    # Format can be json
+    format: ${CATEPILLAR_LOG_FORMAT:-json}
