@@ -15,7 +15,7 @@ var config string
 
 var rootCmd = &cobra.Command{
 	Use: "caterpillar",
-	Short: `🐺 A Modern DNS Server
+	Short: `🐺 Create and Manage Kubernetes Clusters For Developers
 
 If you have any suggestions, bug reports, or annoyances please report
 them to our issue tracker at <https://github.com/Clivern/caterpillar/issues>`,

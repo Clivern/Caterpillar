@@ -1,7 +1,7 @@
 <p align="center">
     <img alt="Caterpillar Logo" src="/static/logo.png?v=1.0.0" width="200" />
     <h3 align="center">Caterpillar</h3>
-    <p align="center">A Fake SMTP Server, Set up in Minutes.</p>
+    <p align="center">Create and Manage Kubernetes Clusters For Developers</p>
     <p align="center">
         <a href="https://github.com/Clivern/Caterpillar/actions/workflows/api.yml">
             <img src="https://github.com/Clivern/Caterpillar/actions/workflows/api.yml/badge.svg">

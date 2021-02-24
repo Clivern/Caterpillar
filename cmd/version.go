@@ -22,9 +22,6 @@ var (
 	BuiltBy = "unknown"
 )
 
-// Static embedded files
-var Static embed.FS
-
 var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "Print the version number",
