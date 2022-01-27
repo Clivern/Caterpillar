@@ -11,6 +11,13 @@ help: Makefile
 	@echo
 
 
+## composer: Install Dependencies.
+.PHONY: composer
+composer:
+	@echo ">> ============= Install Dependencies ============= <<"
+	$(COMPOSER) install
+
+
 ## test: Run test cases.
 .PHONY: test
 test:
@@ -20,7 +27,7 @@ test:
 
 ## ci: Run all CI tests.
 .PHONY: ci
-ci: test
+ci: composer test
 	@echo "\n==> All quality checks passed"
 
 
