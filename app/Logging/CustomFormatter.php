@@ -1,10 +1,5 @@
 <?php
 
-/*
- * This file is part of Maximus - Laravel Applications Ultimate Kit.
- * (c) Clivern <hello@clivern.com>
- */
-
 namespace App\Logging;
 
 use Illuminate\Http\Request;
