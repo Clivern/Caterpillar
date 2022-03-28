@@ -22,6 +22,8 @@ composer:
 .PHONY: test
 test:
 	@echo ">> ============= Running All Tests ============= <<"
+	-cp .env.example .env
+	$(ARTISAN) key:generate
 	$(ARTISAN) test
 
 
