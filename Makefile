@@ -27,6 +27,20 @@ test:
 	$(ARTISAN) test
 
 
+## fix: Fix code format.
+.PHONY: fix
+fix:
+	@echo ">> ============= Fix Code Format ============= <<"
+	./vendor/bin/php-cs-fixer fix
+
+
+## fix-diff: Get code format diff.
+.PHONY: fix-diff
+fix-diff:
+	@echo ">> ============= Get Code Format Diff ============= <<"
+	./vendor/bin/php-cs-fixer fix --diff --dry-run -v
+
+
 ## ci: Run all CI tests.
 .PHONY: ci
 ci: composer test

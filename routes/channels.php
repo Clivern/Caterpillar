@@ -1,5 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of Clivern/Maximus - Laravel Applications Ultimate Kit.
+ *
+ * (c) Clivern <hello@clivern.com>
+ */
+
 use Illuminate\Support\Facades\Broadcast;
 
 /*
@@ -11,7 +19,7 @@ use Illuminate\Support\Facades\Broadcast;
 | application supports. The given channel authorization callbacks are
 | used to check if an authenticated user can listen to the channel.
 |
-*/
+ */
 
 Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;

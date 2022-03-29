@@ -1,20 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of Clivern/Maximus - Laravel Applications Ultimate Kit.
+ *
+ * (c) Clivern <hello@clivern.com>
+ */
+
 namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Log;
 
 /**
- * Logging Middleware
+ * Logging Middleware.
  */
 class Logging
 {
     /**
-     * Log incoming request
+     * Log incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)
@@ -30,11 +38,10 @@ class Logging
     }
 
     /**
-     * Log response
+     * Log response.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Http\Response  $response
-     * @return void
+     * @param \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Response $response
      */
     public function terminate($request, $response)
     {

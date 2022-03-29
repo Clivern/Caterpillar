@@ -1,7 +1,14 @@
 <?php
 
-return [
+declare(strict_types=1);
 
+/*
+ * This file is part of Clivern/Maximus - Laravel Applications Ultimate Kit.
+ *
+ * (c) Clivern <hello@clivern.com>
+ */
+
+return [
     /*
     |--------------------------------------------------------------------------
     | Cross-Origin Resource Sharing (CORS) Configuration
@@ -13,7 +20,7 @@ return [
     |
     | To learn more: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
     |
-    */
+     */
 
     'paths' => ['api/*', 'sanctum/csrf-cookie'],
 
@@ -30,5 +37,4 @@ return [
     'max_age' => 0,
 
     'supports_credentials' => false,
-
 ];

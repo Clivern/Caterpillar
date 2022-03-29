@@ -1,7 +1,14 @@
 <?php
 
-return [
+declare(strict_types=1);
 
+/*
+ * This file is part of Clivern/Maximus - Laravel Applications Ultimate Kit.
+ *
+ * (c) Clivern <hello@clivern.com>
+ */
+
+return [
     /*
     |--------------------------------------------------------------------------
     | Default Hash Driver
@@ -13,7 +20,7 @@ return [
     |
     | Supported: "bcrypt", "argon", "argon2id"
     |
-    */
+     */
 
     'driver' => 'bcrypt',
 
@@ -26,7 +33,7 @@ return [
     | passwords are hashed using the Bcrypt algorithm. This will allow you
     | to control the amount of time it takes to hash the given password.
     |
-    */
+     */
 
     'bcrypt' => [
         'rounds' => env('BCRYPT_ROUNDS', 10),
@@ -41,12 +48,11 @@ return [
     | passwords are hashed using the Argon algorithm. These will allow you
     | to control the amount of time it takes to hash the given password.
     |
-    */
+     */
 
     'argon' => [
-        'memory' => 65536,
+        'memory'  => 65536,
         'threads' => 1,
-        'time' => 4,
+        'time'    => 4,
     ],
-
 ];

@@ -1,5 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of Clivern/Maximus - Laravel Applications Ultimate Kit.
+ *
+ * (c) Clivern <hello@clivern.com>
+ */
+
 namespace App\Exceptions;
 
 use Exception;
@@ -14,14 +22,13 @@ class ResourceNotFoundException extends Exception
     /**
      * Class Constructor.
      *
-     * @param string    $message
      * @param int       $code
      * @param Exception $previous
      */
     public function __construct(
         string $message,
         $code = 0,
-        Exception $previous = null
+        ?Exception $previous = null
     ) {
         parent::__construct($message, $code, $previous);
     }
@@ -41,8 +48,6 @@ class ResourceNotFoundException extends Exception
 
     /**
      * Report the exception.
-     *
-     * @return void
      */
     public function report()
     {
@@ -52,13 +57,14 @@ class ResourceNotFoundException extends Exception
     /**
      * Render the exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function render($request)
     {
         return response()->json([
-            'errorMessage' => $this->getMessage(),
+            'errorMessage'  => $this->getMessage(),
             'correlationId' => $request->headers->get('X-Correlation-ID'),
         ], Response::HTTP_NOT_FOUND);
     }

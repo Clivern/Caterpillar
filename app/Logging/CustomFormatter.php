@@ -1,12 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of Clivern/Maximus - Laravel Applications Ultimate Kit.
+ *
+ * (c) Clivern <hello@clivern.com>
+ */
+
 namespace App\Logging;
 
 use Illuminate\Http\Request;
-use Monolog\Formatter\LineFormatter;
 
 /**
- * Customize Logger
+ * Customize Logger.
  */
 class CustomFormatter
 {
@@ -16,20 +23,17 @@ class CustomFormatter
     protected $request;
 
     /**
-     * Class Constructor
-     *
-     * @param null|Request $request
+     * Class Constructor.
      */
-    public function __construct(Request $request = null)
+    public function __construct(?Request $request = null)
     {
         $this->request = $request;
     }
 
     /**
-     * Append CorrelationId Processor
+     * Append CorrelationId Processor.
      *
-     * @param  \Illuminate\Log\Logger  $logger
-     * @return void
+     * @param \Illuminate\Log\Logger $logger
      */
     public function __invoke($logger)
     {
@@ -39,10 +43,7 @@ class CustomFormatter
     }
 
     /**
-     * Add CorrelationId
-     *
-     * @param array $record
-     * @return  array
+     * Add CorrelationId.
      */
     public function addCorrelationId(array $record): array
     {
