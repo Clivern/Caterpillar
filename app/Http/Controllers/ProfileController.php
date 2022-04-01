@@ -10,9 +10,18 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 /**
  * Profile Controller.
  */
 class ProfileController extends Controller
 {
+    public function viewAction(Request $request)
+    {
+    }
+
+    public function updateAction(Request $request)
+    {
+    }
 }
