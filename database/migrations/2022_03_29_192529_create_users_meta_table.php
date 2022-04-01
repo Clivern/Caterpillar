@@ -3,26 +3,26 @@
 declare(strict_types=1);
 
 /*
- * This file is part of Clivern/Maximus - Laravel Applications Ultimate Kit.
+ * Clivern/Maximus - Laravel Applications Ultimate Kit.
  *
- * (c) Clivern <hello@clivern.com>
+ * (c) clivern <hello@clivern.com>
  */
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfileTable extends Migration
+class CreateUsersMetaTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('profile', function (Blueprint $table) {
+        Schema::create('users_meta', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('meta_key')->index();
+            $table->text('meta_value');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
@@ -33,6 +33,6 @@ class CreateProfileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profile');
+        Schema::dropIfExists('users_meta');
     }
 }

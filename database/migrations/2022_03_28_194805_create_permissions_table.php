@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /*
- * This file is part of Clivern/Maximus - Laravel Applications Ultimate Kit.
+ * Clivern/Maximus - Laravel Applications Ultimate Kit.
  *
- * (c) Clivern <hello@clivern.com>
+ * (c) clivern <hello@clivern.com>
  */
 
 use Illuminate\Database\Migrations\Migration;
@@ -21,11 +21,9 @@ class CreatePermissionsTable extends Migration
     {
         Schema::create('permissions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->index();
             $table->text('description');
             $table->timestamps();
-
-            $table->index(['name']);
         });
     }
 

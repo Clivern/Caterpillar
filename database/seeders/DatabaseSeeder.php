@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /*
- * This file is part of Clivern/Maximus - Laravel Applications Ultimate Kit.
+ * Clivern/Maximus - Laravel Applications Ultimate Kit.
  *
- * (c) Clivern <hello@clivern.com>
+ * (c) clivern <hello@clivern.com>
  */
 
 namespace Database\Seeders;
