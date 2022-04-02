@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /*
- * Clivern/Maximus - Laravel Applications Ultimate Kit.
+ * Maximus - Laravel Applications Ultimate Kit.
  *
- * (c) clivern <hello@clivern.com>
+ * (c) Clivern <hello@clivern.com>
  */
 
 namespace App\Http\Controllers;
@@ -26,6 +26,10 @@ class PluginsController extends Controller
     }
 
     public function deactivateAction(Request $request)
+    {
+    }
+
+    public function configureAction(Request $request)
     {
     }
 

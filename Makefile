@@ -41,6 +41,13 @@ fix-diff:
 	./vendor/bin/php-cs-fixer fix --diff --dry-run -v
 
 
+## run: Run.
+.PHONY: run
+run:
+	@echo ">> ============= Run Application ============= <<"
+	$(ARTISAN) serve
+
+
 ## ci: Run all CI tests.
 .PHONY: ci
 ci: composer test

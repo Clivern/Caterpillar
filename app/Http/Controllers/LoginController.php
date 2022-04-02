@@ -8,13 +8,11 @@ declare(strict_types=1);
  * (c) Clivern <hello@clivern.com>
  */
 
-namespace App\Repository;
-
-use App\Models\Permission;
+namespace App\Http\Controllers;
 
 /**
- * Permission Repository.
+ * Login Controller.
  */
-class PermissionRepository
+class LoginController extends Controller
 {
 }

@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /*
- * Clivern/Maximus - Laravel Applications Ultimate Kit.
+ * Maximus - Laravel Applications Ultimate Kit.
  *
- * (c) clivern <hello@clivern.com>
+ * (c) Clivern <hello@clivern.com>
  */
 
 use Clivern\CodingStandards\Rules;
@@ -14,9 +14,9 @@ use PhpCsFixer\Finder;
 
 
 $fileHeaderComment = <<<COMMENT
-Clivern/Maximus - Laravel Applications Ultimate Kit.
+Maximus - Laravel Applications Ultimate Kit.
 
-(c) clivern <hello@clivern.com>
+(c) Clivern <hello@clivern.com>
 COMMENT;
 
 $finder = Finder::create()

@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /*
- * Clivern/Maximus - Laravel Applications Ultimate Kit.
+ * Maximus - Laravel Applications Ultimate Kit.
  *
- * (c) clivern <hello@clivern.com>
+ * (c) Clivern <hello@clivern.com>
  */
 
 namespace App\Http;
@@ -30,6 +30,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
 
+        // Correlation Id
         \App\Http\Middleware\CorrelationId::class,
 
         // Logging middleware
@@ -76,5 +77,6 @@ class Kernel extends HttpKernel
         'signed'           => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle'         => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified'         => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'permission'       => \App\Http\Middleware\Permission::class,
     ];
 }

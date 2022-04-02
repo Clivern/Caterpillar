@@ -3,12 +3,15 @@
 declare(strict_types=1);
 
 /*
- * Clivern/Maximus - Laravel Applications Ultimate Kit.
+ * Maximus - Laravel Applications Ultimate Kit.
  *
- * (c) clivern <hello@clivern.com>
+ * (c) Clivern <hello@clivern.com>
  */
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\PluginsController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +25,15 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::put('/v1/profile/update', [ProfileController::class, 'updateAction']);
+
+Route::post('/v1/users', [UsersController::class, 'createAction'])->middleware('permission:create_user');
+Route::put('/v1/users/{id}', [UsersController::class, 'updateAction'])->middleware('permission:update_user');
+Route::delete('/v1/users/{id}', [UsersController::class, 'deleteAction'])->middleware('permission:delete_user');
+
+Route::put('/v1/plugins/activate/{id}', [PluginsController::class, 'activateAction'])->middleware('permission:activate_plugin');
+Route::put('/v1/plugins/deactivate/{id}', [PluginsController::class, 'deactivateAction'])->middleware('permission:deactivate_plugin');
+Route::put('/v1/plugins/configure/{id}', [PluginsController::class, 'configureAction'])->middleware('permission:configure_plugin');
+Route::delete('/v1/plugins/{id}', [PluginsController::class, 'deleteAction'])->middleware('permission:delete_plugin');
+
+Route::put('/v1/settings', [SettingsController::class, 'updateAction'])->middleware('permission:update_settings');
