@@ -17,6 +17,9 @@ use Illuminate\Http\Request;
  */
 class HealthController extends Controller
 {
+    /**
+     * Index Action.
+     */
     public function index(Request $request)
     {
         return response()->json([

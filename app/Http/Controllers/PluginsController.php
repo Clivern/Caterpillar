@@ -17,22 +17,37 @@ use Illuminate\Http\Request;
  */
 class PluginsController extends Controller
 {
+    /**
+     * List Action.
+     */
     public function listAction(Request $request)
     {
     }
 
+    /**
+     * Activate Action.
+     */
     public function activateAction(Request $request)
     {
     }
 
+    /**
+     * Deactivate Action.
+     */
     public function deactivateAction(Request $request)
     {
     }
 
+    /**
+     * Configure Action.
+     */
     public function configureAction(Request $request)
     {
     }
 
+    /**
+     * Delete Action.
+     */
     public function deleteAction(Request $request)
     {
     }

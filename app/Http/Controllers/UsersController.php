@@ -17,18 +17,30 @@ use Illuminate\Http\Request;
  */
 class UsersController extends Controller
 {
+    /**
+     * List Action.
+     */
     public function listAction(Request $request)
     {
     }
 
+    /**
+     * Create Action.
+     */
     public function createAction(Request $request)
     {
     }
 
+    /**
+     * Update Action.
+     */
     public function updateAction(Request $request)
     {
     }
 
+    /**
+     * Delete Action.
+     */
     public function deleteAction(Request $request)
     {
     }

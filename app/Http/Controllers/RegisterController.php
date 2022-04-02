@@ -15,4 +15,17 @@ namespace App\Http\Controllers;
  */
 class RegisterController extends Controller
 {
+    /**
+     * View Action.
+     */
+    public function viewAction(Request $request)
+    {
+    }
+
+    /**
+     * Register Action.
+     */
+    public function registerAction(Request $request)
+    {
+    }
 }

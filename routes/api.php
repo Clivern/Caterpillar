@@ -8,8 +8,10 @@ declare(strict_types=1);
  * (c) Clivern <hello@clivern.com>
  */
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PluginsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -25,7 +27,10 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::put('/v1/profile/update', [ProfileController::class, 'updateAction']);
+Route::put('/v1/action/login', [LoginController::class, 'loginAction']);
+Route::put('/v1/action/register', [RegisterController::class, 'registerAction']);
+
+Route::put('/v1/action/profile/update', [ProfileController::class, 'updateAction']);
 
 Route::post('/v1/users', [UsersController::class, 'createAction'])->middleware('permission:create_user');
 Route::put('/v1/users/{id}', [UsersController::class, 'updateAction'])->middleware('permission:update_user');
@@ -36,4 +41,4 @@ Route::put('/v1/plugins/deactivate/{id}', [PluginsController::class, 'deactivate
 Route::put('/v1/plugins/configure/{id}', [PluginsController::class, 'configureAction'])->middleware('permission:configure_plugin');
 Route::delete('/v1/plugins/{id}', [PluginsController::class, 'deleteAction'])->middleware('permission:delete_plugin');
 
-Route::put('/v1/settings', [SettingsController::class, 'updateAction'])->middleware('permission:update_settings');
+Route::put('/v1/action/settings/update', [SettingsController::class, 'updateAction'])->middleware('permission:update_settings');

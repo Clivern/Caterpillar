@@ -15,4 +15,17 @@ namespace App\Http\Controllers;
  */
 class LoginController extends Controller
 {
+    /**
+     * View Action.
+     */
+    public function viewAction(Request $request)
+    {
+    }
+
+    /**
+     * Login Action.
+     */
+    public function loginAction(Request $request)
+    {
+    }
 }

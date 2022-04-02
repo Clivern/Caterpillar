@@ -17,10 +17,16 @@ use Illuminate\Http\Request;
  */
 class ProfileController extends Controller
 {
+    /**
+     * View Action.
+     */
     public function viewAction(Request $request)
     {
     }
 
+    /**
+     * Update Action.
+     */
     public function updateAction(Request $request)
     {
     }
