@@ -12,7 +12,11 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
+/**
+ * Permission Middleware.
+ */
 class Permission
 {
     /**
@@ -24,6 +28,13 @@ class Permission
      */
     public function handle(Request $request, Closure $next, ...$permissions)
     {
+        Log::info(sprintf(
+            'Authorize Incoming %s Request to %s with permissions %s',
+            $request->method(),
+            $request->path(),
+            implode(", ", array_values($permissions))
+        ));
+
         return $next($request);
     }
 }
