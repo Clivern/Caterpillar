@@ -11,10 +11,18 @@ declare(strict_types=1);
 namespace App\Repository;
 
 use App\Models\Permission;
+use Illuminate\Support\Facades\Log;
 
 /**
  * Permission Repository.
  */
 class PermissionRepository
 {
+    /**
+     * Class Constructor.
+     */
+    public function __construct()
+    {
+        Log::info("Init Permission Repository");
+    }
 }

@@ -10,9 +10,18 @@ declare(strict_types=1);
 
 namespace App\Repository;
 
+use Illuminate\Support\Facades\Log;
+
 /**
  * Failed Job Repository.
  */
 class FailedJobRepository
 {
+    /**
+     * Class Constructor.
+     */
+    public function __construct()
+    {
+        Log::info("Init FailedJob Repository");
+    }
 }

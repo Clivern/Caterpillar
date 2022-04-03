@@ -10,11 +10,21 @@ declare(strict_types=1);
 
 namespace App\Service;
 
+use Illuminate\Support\Facades\Log;
+
 /**
  * Access Service.
  */
 class Access
 {
+    /**
+     * Class Constructor.
+     */
+    public function __construct()
+    {
+        Log::info("Init Access Service");
+    }
+
     /**
      * Check if user has permissions.
      */
