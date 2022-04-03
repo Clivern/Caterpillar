@@ -15,9 +15,9 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
 
 /**
- * Class ResourceNotFoundException.
+ * Class InvalidRequest.
  */
-class ResourceNotFoundException extends Exception
+class InvalidRequest extends Exception
 {
     /**
      * Class Constructor.
@@ -51,7 +51,7 @@ class ResourceNotFoundException extends Exception
      */
     public function report()
     {
-        Log::debug(sprintf("ResourceNotFound Exception raised: %s", $this->getMessage()));
+        Log::debug(sprintf("InvalidRequest Exception raised: %s", $this->getMessage()));
     }
 
     /**
@@ -66,6 +66,6 @@ class ResourceNotFoundException extends Exception
         return response()->json([
             'errorMessage'  => $this->getMessage(),
             'correlationId' => $request->headers->get('X-Correlation-ID'),
-        ], Response::HTTP_NOT_FOUND);
+        ], Response::HTTP_BAD_REQUEST);
     }
 }

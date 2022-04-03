@@ -15,9 +15,9 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
 
 /**
- * Class InvalidRequestException.
+ * Class InternalServerError.
  */
-class InvalidRequestException extends Exception
+class InternalServerError extends Exception
 {
     /**
      * Class Constructor.
@@ -51,7 +51,7 @@ class InvalidRequestException extends Exception
      */
     public function report()
     {
-        Log::debug(sprintf("InvalidRequest Exception raised: %s", $this->getMessage()));
+        Log::debug(sprintf("InternalServerError Exception raised: %s", $this->getMessage()));
     }
 
     /**
@@ -66,6 +66,6 @@ class InvalidRequestException extends Exception
         return response()->json([
             'errorMessage'  => $this->getMessage(),
             'correlationId' => $request->headers->get('X-Correlation-ID'),
-        ], Response::HTTP_BAD_REQUEST);
+        ], Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 }
