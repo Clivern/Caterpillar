@@ -26,7 +26,7 @@ class Validate
     {
         $errors = $this->check($data, $schemaName);
 
-        if (!empty($errors)) {
+        if (0 !== count($errors)) {
             throw new InvalidRequest($errors[0]);
         }
 
