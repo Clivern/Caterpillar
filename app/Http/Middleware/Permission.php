@@ -29,7 +29,7 @@ class Permission
     public function handle(Request $request, Closure $next, ...$permissions)
     {
         Log::info(sprintf(
-            'Authorize Incoming %s Request to %s with permissions %s',
+            'Authorize Incoming %s Request to %s with Permissions %s',
             $request->method(),
             $request->path(),
             implode(", ", array_values($permissions))
