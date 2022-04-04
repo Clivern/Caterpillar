@@ -13,21 +13,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 /**
- * Login Controller.
+ * Jobs Controller.
  */
-class LoginController extends Controller
+class JobsController extends Controller
 {
     /**
-     * View Action.
+     * Get One Action.
      */
-    public function viewAction(Request $request)
+    public function getOneAction(Request $request)
     {
     }
 
     /**
-     * Login Action.
+     * Delete One Action.
      */
-    public function loginAction(Request $request)
+    public function deleteOneAction(Request $request)
     {
     }
 }
