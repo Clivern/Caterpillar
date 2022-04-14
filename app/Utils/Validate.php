@@ -8,7 +8,7 @@ declare(strict_types=1);
  * (c) Clivern <hello@clivern.com>
  */
 
-namespace App\Util;
+namespace App\Utils;
 
 use App\Exceptions\InvalidRequest;
 use Exception;
