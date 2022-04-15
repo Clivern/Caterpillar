@@ -13,6 +13,9 @@ namespace App\Console\Commands;
 use DB;
 use Illuminate\Console\Command;
 
+/**
+ * Wait for DB Connection Command.
+ */
 class WaitForDB extends Command
 {
     /**
